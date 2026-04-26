@@ -1,4 +1,3 @@
-
 -- Basic Settings
 vim.g.did_load_filetypes = 1
 vim.g.formatoptions = "qrn1"
@@ -69,6 +68,9 @@ vim.opt.fillchars = {
     foldsep = "│",
     foldclose = "▸"
 }
+
+-- undofile
+vim.opt.undofile = true   -- сохранять историю undo между сессиями
 
 vim.cmd([[highlight clear LineNr]])
 vim.cmd([[highlight clear SignColumn]])
