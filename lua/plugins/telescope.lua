@@ -1,18 +1,23 @@
+return {
+  {
+    'nvim-telescope/telescope.nvim',
+    dependencies = { 'nvim-lua/plenary.nvim' },
+    config = function()
+      local builtin = require('telescope.builtin')
 
--- Настраиваем комбинации под разные функции
-local builtin = require('telescope.builtin')
+      -- Файлы и буферы
+      vim.keymap.set('n', '<leader>ff', builtin.find_files, {})
+      vim.keymap.set('n', '<leader>ft', builtin.live_grep, {})
+      vim.keymap.set('n', '<leader>fb', builtin.buffers, {})
+      vim.keymap.set('n', '<leader>fh', builtin.help_tags, {})
 
--- Работа с файлами и буфферами
-vim.keymap.set('n', '<leader>ff', builtin.find_files, {})
-vim.keymap.set('n', '<leader>ft', builtin.live_grep, {})
-vim.keymap.set('n', '<leader>fb', builtin.buffers, {})
-vim.keymap.set('n', '<leader>fh', builtin.help_tags, {})
+      -- Git
+      vim.keymap.set('n', '<leader>gb', builtin.git_branches, {})
+      vim.keymap.set('n', '<leader>gc', builtin.git_commits, {})
+      vim.keymap.set('n', '<leader>gs', builtin.git_status, {})
 
--- Работа с Git
-vim.keymap.set('n', '<leader>gb', builtin.git_branches, {})
-vim.keymap.set('n', '<leader>gc', builtin.git_commits, {})
-vim.keymap.set('n', '<leader>gs', builtin.git_status, {})
-
--- Выбор цветовой схемы
-vim.keymap.set('n', '<leader>cs', builtin.colorscheme, {})
-
+      -- Цветовая схема
+      vim.keymap.set('n', '<leader>cs', builtin.colorscheme, {})
+    end,
+  },
+}
