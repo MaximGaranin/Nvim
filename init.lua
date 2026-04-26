@@ -1,5 +1,9 @@
+vim.g.mapleader = " "
+vim.g.maplocalleader = " "
+
 vim.g.loaded_perl_provider = 0
 vim.opt.termguicolors = true
+
 require('core.plugins')
 require('core.mappings')
 require('core.colors')

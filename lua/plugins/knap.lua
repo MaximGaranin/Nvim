@@ -1,4 +1,5 @@
 return {
+  {      
   "frabjous/knap",
   lazy = false,
   config = function()
@@ -23,4 +24,5 @@ return {
       end,
     })
   end,
+  },
 }
